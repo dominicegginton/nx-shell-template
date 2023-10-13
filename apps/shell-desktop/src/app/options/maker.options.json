@@ -1,3 +1,22 @@
 {
-  "$schema": "../../../../../node_modules/nx-electron/src/validation/maker.schema.json"
+  "$schema": "../../../../../node_modules/nx-electron/src/validation/maker.schema.json",
+  "productName": "Shell",
+  "copyright": "Arup",
+  "electronCompile": false,
+  "npmRebuild": false,
+  "asar": true,
+  "win": {
+    "target": "appx",
+    "icon": "relative\\path\\to\\app_icon.ico",
+    "publisherName": "Arup"
+  },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+  "appx": {
+    "displayName": "Shell",
+    "publisherDisplayName": "Arup",
+    "backgroundColor": "transparent"
+  }
 }
