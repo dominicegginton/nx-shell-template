@@ -5,7 +5,7 @@
     "serve-desktop": "concurrently \"npx nx run shell-browser:serve\" \"npx nx run shell-desktop:serve\"",
     "serve-browser": "npx nx run shell-browser:serve",
     "make-desktop": "/bin/bash pick-identity-and-make.sh",
-    "build-browser": "npm nx run shell-browser:build"
+    "build-browser": "npx nx run shell-browser:build"
   },
   "nx": {},
   "private": true,
@@ -40,7 +40,6 @@
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "jest": "29.4.1",
     "jest-environment-jsdom": "29.4.1",

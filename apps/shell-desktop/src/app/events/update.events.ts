@@ -1,4 +1,4 @@
-import { app, autoUpdater, dialog } from 'electron';
+import { app, autoUpdater, dialog, MessageBoxOptions } from 'electron';
 import { platform, arch } from 'os';
 import { updateServerUrl } from '../constants';
 import App from '../app';
@@ -31,8 +31,8 @@ export default class UpdateEvents {
 
 autoUpdater.on(
   'update-downloaded',
-  (event, releaseNotes, releaseName, releaseDate) => {
-    const dialogOpts = {
+  (_, releaseNotes, releaseName) => {
+    const dialogOpts: MessageBoxOptions = {
       type: 'info',
       buttons: ['Restart', 'Later'],
       title: 'Application Update',
@@ -41,7 +41,6 @@ autoUpdater.on(
         'A new version has been downloaded. Restart the application to apply the updates.',
     };
 
-    // @ts-ignore
     dialog.showMessageBox(dialogOpts).then((returnValue) => {
       if (returnValue.response === 0) autoUpdater.quitAndInstall();
     });

@@ -1,6 +1,7 @@
 import styles from './layout.module.css';
 
 import { Route, Routes, Link } from 'react-router-dom';
+import { isElectron } from 'utils';
 
 /* eslint-disable-next-line */
 export interface LayoutProps {}
@@ -9,6 +10,7 @@ export function Layout(props: LayoutProps) {
   return (
     <div className={styles['container']}>
       <h1>Welcome to Shell 2.0!</h1>
+      <p>Running in {isElectron() ? 'Electron' : 'Browser'}.</p>
     <div>
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
