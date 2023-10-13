@@ -4,6 +4,5 @@
   "copyright": "Arup",
   "electronCompile": false,
   "npmRebuild": false,
-  "asar": true,
-  "files": ["node_modules/**"]
+  "asar": true
 }

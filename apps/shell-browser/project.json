@@ -12,7 +12,7 @@
         "compiler": "babel",
         "outputPath": "dist/packages/shell-browser",
         "index": "apps/shell-browser/src/index.html",
-        "baseHref": "/assets",
+        "baseHref": "/",
         "main": "apps/shell-browser/src/main.tsx",
         "tsConfig": "apps/shell-browser/tsconfig.app.json",
         "assets": [
@@ -22,7 +22,7 @@
         "styles": ["apps/shell-browser/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/shell-browser/webpack.config.js",
+        "webpackConfig": "apps/shell-browser/webpack.config.js"
       },
       "configurations": {
         "development": {
@@ -35,6 +35,21 @@
           "fileReplacements": [
             {
               "replace": "apps/shell-browser/src/environments/environment.ts",
+              "with": "apps/shell-browser/src/environments/environment.prod-desktop.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "baseHref": "./"
+        },
+        "production-browser": {
+          "fileReplacements": [
+            {
+              "replace": "apps/shell-browser/src/environments/environment.ts",
               "with": "apps/shell-browser/src/environments/environment.prod.ts"
             }
           ],
@@ -43,7 +58,8 @@
           "sourceMap": false,
           "namedChunks": false,
           "extractLicenses": true,
-          "vendorChunk": false
+          "vendorChunk": false,
+          "baseHref": "/"
         }
       }
     },

@@ -3,8 +3,14 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/shell-desktop/src",
   "projectType": "application",
-  "implicitDependencies": ["shell-browser", "shell-browser"],
+  "implicitDependencies": ["shell-browser"],
   "targets": {
+    "serve": {
+      "executor": "nx-electron:execute",
+      "options": {
+        "buildTarget": "shell-desktop:build"
+      }
+    },
     "build": {
       "executor": "nx-electron:build",
       "outputs": ["{options.outputPath}"],
@@ -24,31 +30,31 @@
               "replace": "apps/shell-desktop/src/environments/environment.ts",
               "with": "apps/shell-desktop/src/environments/environment.prod.ts"
             }
-          ],
-          "assets" : [
-            {
-              "glob": "**/*",
-              "input": "dist/packages/shell-browser",
-              "output": "src/assets/"
-            }
           ]
         }
       },
-      "defaultConfiguration": "production"
-    },
-    "serve": {
-      "executor": "nx-electron:execute",
-      "options": {
-        "buildTarget": "shell-desktop:build"
-      }
+      "defaultConfiguration": "production",
+      "dependsOn": ["^build"]
     },
     "package": {
       "executor": "nx-electron:package",
       "options": {
         "name": "shell-desktop",
         "frontendProject": "shell-browser",
-        "outputPath": "dist/packages/shell-desktop/package"
-      }
+        "outputPath": "dist/packages/shell-desktop/package",
+        "prepackageOnly": true
+      },
+      "dependsOn": ["^build", "build"]
+    },
+    "make": {
+      "executor": "nx-electron:make",
+      "options": {
+        "name": "shell-desktop",
+        "frontendProject": "shell-browser",
+        "sourcePath": "dist/packages/",
+        "outputPath": "dist/executables"
+      },
+      "dependsOn": ["^build", "build", "package"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
