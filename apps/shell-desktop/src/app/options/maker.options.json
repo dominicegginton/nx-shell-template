@@ -5,15 +5,16 @@
   "electronCompile": false,
   "npmRebuild": false,
   "asar": true,
+  "files": ["dist/**", "node_modules/**", "package.json"],
   "win": {
     "target": "appx",
     "icon": "relative\\path\\to\\app_icon.ico",
     "publisherName": "Arup"
   },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  },
   "appx": {
     "displayName": "Shell",
     "publisherDisplayName": "Arup",

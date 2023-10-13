@@ -1,12 +1,14 @@
 ```sh
-npm ci # Install dependencies
-npm run serve-desktop # Run the electron desktop app
-npm run serve-browser # Run  just the React web app
-```
+npm ci                  # Install deps
 
-To install a dependency:
+npm run serve-desktop   # Serve app using electron desktop
+npm run serve-browser   # Serve app in browser
 
-```sh
-npm install <package-name>
-npm install --save-dev <package-name>
+npm run lint            # Run target lint on all projects in workspace
+npm run test            # Run target test on all projects in workspace
+npx nx format:check     # Run file formatting checks on workspace
+
+npm run package-desktop # Package app for electron on current platform
+npm run build-browser   # Build app for web distrubution
+
 ```
