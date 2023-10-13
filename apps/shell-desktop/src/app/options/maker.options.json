@@ -5,5 +5,5 @@
   "electronCompile": false,
   "npmRebuild": false,
   "asar": true,
-  "files": ["dist/**/*", "node_modules/**"]
+  "files": ["node_modules/**"]
 }

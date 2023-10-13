@@ -2,7 +2,7 @@
   "name": "shell",
   "version": "0.0.0",
   "scripts": {
-    "serve-desktop": "concurrently \"npx nx run shell-browser-webpack:serve\" \"npx nx run shell-desktop:serve\"",
+    "serve-desktop": "concurrently \"npx nx run shell-browser:serve\" \"npx nx run shell-desktop:serve\"",
     "build-desktop": "npx nx run shell-browser:build && npx nx run shell-desktop:package && node scripts/postbuild.mjs",
     "serve-browser": "npx nx run shell-browser:serve",
     "build-browser": "npx nx run shell-browser:build",
@@ -55,6 +55,7 @@
     "react-refresh": "0.10.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "5.1.3",
     "url-loader": "4.1.1"
   }

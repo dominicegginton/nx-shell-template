@@ -12,7 +12,7 @@
         "compiler": "babel",
         "outputPath": "dist/packages/shell-browser",
         "index": "apps/shell-browser/src/index.html",
-        "baseHref": "/",
+        "baseHref": "/assets",
         "main": "apps/shell-browser/src/main.tsx",
         "tsConfig": "apps/shell-browser/tsconfig.app.json",
         "assets": [
@@ -22,7 +22,7 @@
         "styles": ["apps/shell-browser/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/shell-browser/webpack.config.js"
+        "webpackConfig": "apps/shell-browser/webpack.config.js",
       },
       "configurations": {
         "development": {

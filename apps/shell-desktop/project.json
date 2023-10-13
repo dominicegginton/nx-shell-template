@@ -24,6 +24,13 @@
               "replace": "apps/shell-desktop/src/environments/environment.ts",
               "with": "apps/shell-desktop/src/environments/environment.prod.ts"
             }
+          ],
+          "assets" : [
+            {
+              "glob": "**/*",
+              "input": "dist/packages/shell-browser",
+              "output": "src/assets/"
+            }
           ]
         }
       },
