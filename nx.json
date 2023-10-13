@@ -14,10 +14,10 @@
       "inputs": ["production", "^production"]
     },
     "package": {
-      "dependsOn": ["build"],
+      "dependsOn": ["build"]
     },
     "make": {
-      "dependsOn": ["package"],
+      "dependsOn": ["package"]
     },
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]

@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "serve-desktop": "concurrently \"npx nx run shell-browser:serve\" \"npx nx run shell-desktop:serve\"",
-    "serve-browser": "npx nx run shell-browser:serve",
-    "make-desktop": "/bin/bash pick-identity-and-make.sh",
-    "build-browser": "npx nx run shell-browser:build"
+    "serve-browser": "npx nx run shell-browser:serve"
   },
   "nx": {},
   "private": true,

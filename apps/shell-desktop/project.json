@@ -39,16 +39,7 @@
       "options": {
         "name": "shell-desktop",
         "frontendProject": "shell-browser",
-        "outputPath": "dist/packages",
-        "prepackageOnly": true
-      }
-    },
-    "make": {
-      "executor": "nx-electron:make",
-      "options": {
-        "name": "shell-desktop",
-        "frontendProject": "shell-browser",
-        "outputPath": "dist/executables"
+        "outputPath": "dist/packages"
       }
     },
     "lint": {
