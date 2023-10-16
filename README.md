@@ -14,6 +14,7 @@ npx nx run-many --target test   # Run unit testing on all projects in workspace
 
 npx nx run shell-browser:build:production-browser   # Build the shell-browser project for production (Browser)
 npx nx run shell-browser:build:production           # Build the shell-browser project for production (Electron)
+npx nx run shell-browser:preview:production-browser # Prewview the built shell-browser project (Browser)
 
 npx nx run shell-desktop:make:production   # Build, Package & Make the shell-desktop project for production (Electron) - shell-browser is auto built in production mode when this is run
 ```
