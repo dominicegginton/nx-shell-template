@@ -63,6 +63,13 @@
         }
       }
     },
+    "preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx @web/dev-server -r dist/packages/shell-browser -p 8080",
+      },
+      "dependsOn": ["build"]
+    },
     "serve": {
       "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
